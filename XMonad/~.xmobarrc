@@ -7,9 +7,11 @@ Config  { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
                      , Run Swap [] 10
                      , Run Battery ["-t","Batt: <left>% / <timeleft>", "--", "-c", "energy_full"] 10
                      , Run Date "%a %b %_d %l:%M" "date" 10
+                     , Run Wireless "wlan0" [] 10
+                     , Run Network "eth0" [] 10
                      , Run StdinReader 
                      ]
         , sepChar = "%"
         , alignSep = "}{"
-        , template = "%StdinReader% }{ %multicpu% | %memory% * %swap% | %date% | %battery%"
+        , template = "%StdinReader% }{ %multicpu% | %memory% * %swap% | %battery% | %wlan0wi% | %eth0% | %date% "
         }

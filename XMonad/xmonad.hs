@@ -16,6 +16,7 @@ main = do
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
                         }
-        , ((modm , xK_Print ), spawn "scrot screen_%Y-%m-%d-%H-%M-%S.png -d 1")
-        , ((modm .|. controlMask, xK_Print ), spawn "scrot window_%Y-%m-%d-%H-%M-%S.png -d 1-u") 
-        }
+        } `additionalKeys`
+        [((mod1Mask, 0x30), spawn "scrot screen_%Y-%m-%d-%H-%M-%S.png -d 1")
+        ,((mod1Mask .|. shiftMask, 0x30), spawn "scrot window_%Y-%m-%d-%H-%M-%S.png -d 1-u") 
+        ]

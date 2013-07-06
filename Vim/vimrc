@@ -260,7 +260,7 @@ inoremap <C-l> <C-x><C-l>
 inoremap <C-f> <C-x><C-f>
 
 " Set default accept key to space
-let WC_accept_key = "<Space>"
+let WC_accept_key = "<Tab>"
 autocmd BufEnter * call DoWordComplete() 
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac

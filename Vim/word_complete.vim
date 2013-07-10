@@ -127,6 +127,7 @@ fun! DoWordComplete()
   if has("mac")
     snoremap <buffer>  <Del>a
   else
+    snoremap <buffer> <Space> <Del>a
     snoremap <buffer> <BS> <Del>a
   endif "has("mac")
   if version > 505
@@ -150,6 +151,7 @@ fun! EndWordComplete()
   if has("mac")
     vunmap <buffer> 
   else
+    vunmap <buffer> <Space>
     vunmap <buffer> <BS>
   endif "has("mac")
   if version > 505

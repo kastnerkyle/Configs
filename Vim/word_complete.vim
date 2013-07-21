@@ -54,7 +54,7 @@
 " source the user configuration file(s):
 runtime! plugin/<sfile>:t:r.vimrc
 " Use the values from the configuration file(s) or the defaults:
-let s:min_len = exists("g:WC_min_len") ? g:WC_min_len : 1
+let s:min_len = exists("g:WC_min_len") ? g:WC_min_len : 3
 let s:accept_key = exists("g:WC_accept_key") ? g:WC_accept_key : "<Tab>"
 
 " Use Vim defaults while :source'ing this file.

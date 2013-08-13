@@ -1,7 +1,10 @@
 #!/bin/bash
 CUR_DIR=`pwd`
 mkdir -p $HOME/.vim/plugin
-ln -s $CUR_DIR/Vim/word_complete.vim $HOME/.vim/plugin/
+#ln -s $CUR_DIR/Vim/word_complete.vim $HOME/.vim/plugin/
+#open supertab.vmb in vim
+#:so %
+#:q
 ln -s $CUR_DIR/Vim/vimrc $HOME/.vimrc
 
 mkdir ~/.xmonad

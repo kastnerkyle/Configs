@@ -43,7 +43,7 @@
 " => Autocomplete 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Complete options (disable preview scratch window)
-set completeopt=menu,longest
+set completeopt=menu,preview
 
 " Limit popup menu height
 set pumheight=15

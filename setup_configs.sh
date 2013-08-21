@@ -4,6 +4,7 @@ CUR_DIR=`pwd`
 #open supertab.vmb in vim
 #:so %
 #:q
+mkdir ~/.vim
 ln -s $CUR_DIR/Vim/plugin $HOME/.vim/plugin
 ln -s $CUR_DIR/Vim/doc $HOME/.vim/doc
 ln -s $CUR_DIR/Vim/autoload $HOME/.vim/autoload

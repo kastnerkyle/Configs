@@ -43,7 +43,7 @@
 " => Autocomplete 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Complete options (disable preview scratch window)
-set completeopt=menu,preview
+set completeopt=menu,preview,longest
 
 " Limit popup menu height
 set pumheight=15
@@ -56,6 +56,9 @@ let g:SuperTabDefaultCompletionTupe="context"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Map jj to <Esc>
+imap jj <Esc>
+
 " Sets how many lines of history VIM has to remember
 set history=700
 

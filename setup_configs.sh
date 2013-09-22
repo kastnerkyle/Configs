@@ -9,12 +9,6 @@ git config --global user.name "Kyle Kastner"
 
 echo 'addpath(genpath("/usr/share/octave/packages"))' >> ~/.octaverc
 
-mkdir ~/.vim
-ln -s $CUR_DIR/Vim/plugin $HOME/.vim/plugin
-ln -s $CUR_DIR/Vim/doc $HOME/.vim/doc
-ln -s $CUR_DIR/Vim/autoload $HOME/.vim/autoload
-ln -s $CUR_DIR/Vim/vimrc $HOME/.vimrc
-
 mkdir ~/.xmonad
 ln -s $CUR_DIR/XMonad/xmonad.hs $HOME/.xmonad/xmonad.hs
 ln -s $CUR_DIR/XMonad/xmobarrc $HOME/.xmobarrc

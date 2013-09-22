@@ -1,8 +1,9 @@
 #!/bin/bash
+CURDIR=`pwd`
 mkdir $HOME/.vim plugin doc autoload bundle
-ln -s plugin $HOME/.vim/plugin
-ln -s doc $HOME/.vim/doc
-ln -s autoload $HOME/.vim/autoload
-ln -s bundle $HOME/.vim/bundle 
-ln -s vimrc $HOME/.vimrc
-wget -O autoload/pathogen.vim http://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+ln -s $CURDIR/plugin $HOME/.vim/plugin
+ln -s $CURDIR/doc $HOME/.vim/doc
+ln -s $CURDIR/autoload $HOME/.vim/autoload
+ln -s $CURDIR/bundle $HOME/.vim/bundle 
+ln -s $CURDIR/vimrc $HOME/.vimrc
+git clone https://github.com/gmarik/vundle.git bundle/vundle

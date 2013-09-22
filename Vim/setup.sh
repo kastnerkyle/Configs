@@ -7,3 +7,4 @@ ln -s $CURDIR/autoload $HOME/.vim/autoload
 ln -s $CURDIR/bundle $HOME/.vim/bundle 
 ln -s $CURDIR/vimrc $HOME/.vimrc
 git clone https://github.com/gmarik/vundle.git bundle/vundle
+vim +BundleInstall +qall

@@ -13,8 +13,21 @@ Bundle 'gmarik/vundle'
 " The bundles you install will be listed here
 Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'ervandew/supertab'
 
 filetype plugin indent on
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Supertab 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:SuperTabDefaultCompletionType = "context"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Jedi-vim 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:jedi#popup_on_dot = 0
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Python-mode 
@@ -58,6 +71,7 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
 let g:pymode_folding = 0
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General

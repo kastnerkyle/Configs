@@ -4,6 +4,11 @@ CUR_DIR=`pwd`
 #open supertab.vmb in vim
 #:so %
 #:q
+git config --global user.email "kastnerkyle@gmail.com"
+git config --global user.name "Kyle Kastner"
+
+echo 'addpath(genpath("/usr/share/octave/packages"))' >> ~/.octaverc
+
 mkdir ~/.vim
 ln -s $CUR_DIR/Vim/plugin $HOME/.vim/plugin
 ln -s $CUR_DIR/Vim/doc $HOME/.vim/doc

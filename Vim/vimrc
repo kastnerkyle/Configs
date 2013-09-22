@@ -15,19 +15,24 @@ Bundle 'klen/python-mode'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 
+" TODO: C++
+" http://www.zwiener.org/vimautocomplete.html
+
 filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Supertab 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au FileType python set omnifunc=pythoncomplete#Complete
+set completeopt=menuone,longest,preview
 let g:SuperTabDefaultCompletionType = "context"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Jedi-vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:jedi#auto_initialization = 1
 let g:jedi#popup_on_dot = 0
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Python-mode 
@@ -55,6 +60,8 @@ let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
 " Auto check on save
 let g:pymode_lint_write = 1
+" Automatically fix PEP8 errors in the current buffer:
+noremap <F8> :PyLintAuto<CR>
 
 " Support virtualenv
 let g:pymode_virtualenv = 1

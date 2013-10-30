@@ -10,3 +10,7 @@ git clone https://github.com/gmarik/vundle.git bundle/vundle
 #Need this for proper autocomplete with jedi-vim
 echo 'export PYTHONPATH="$HOME/anaconda/lib/python2.7/site-packages":$PYTHONPATH' >> $HOME/.bashrc
 vim +BundleInstall +qall
+echo ''
+echo ''
+echo 'You will need the argparse package - pip install argparse'
+echo ''

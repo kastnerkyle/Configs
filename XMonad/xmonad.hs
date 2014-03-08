@@ -6,6 +6,7 @@ import XMonad.Hooks.SetWMName
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 
+-- alt 0 to take a screenshot
 main = do
     xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmobarrc"
     xmonad $ defaultConfig

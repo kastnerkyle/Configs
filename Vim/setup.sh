@@ -13,5 +13,6 @@ echo 'export PYTHONPATH="$HOME/anaconda3/lib/python3.4/site-packages":$PYTHONPAT
 vim +BundleInstall +qall
 echo ''
 echo ''
-echo 'You will need the argparse package - pip install argparse'
+echo 'Installing argparse package - pip install argparse'
 echo ''
+pip install argparse

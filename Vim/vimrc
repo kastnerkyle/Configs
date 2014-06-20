@@ -23,10 +23,10 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Supertab 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"au FileType python set omnifunc=pythoncomplete#Complete " This breaks stuff...
+" au FileType python set omnifunc=pythoncomplete#Complete " This breaks stuff
 set completeopt=menuone,longest,preview
-let g:SuperTabDefaultCompletionType = "context"
-
+" let g:SuperTabDefaultCompletionType = \"context"
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Jedi-vim 
@@ -50,7 +50,7 @@ let g:jedi#auto_close_doc = 1
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 0
+let g:pymode_rope = 1
 
 " Documentation
 let g:pymode_doc = 1
@@ -62,7 +62,7 @@ let g:pymode_lint_checker = "pyflakes,pep8"
 " Auto check on save
 let g:pymode_lint_write = 1
 " Automatically fix PEP8 errors in the current buffer:
-noremap <F8> :PyLintAuto<CR>
+noremap <F8> :PymodeLintAuto<CR>
 
 " Support virtualenv
 let g:pymode_virtualenv = 1

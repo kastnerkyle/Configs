@@ -21,6 +21,18 @@ Bundle 'ervandew/supertab'
 filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Sort lines - usage :
+"                         :'<,'>call SortLines()
+"                         :4,18call SortLines() 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! SortLines() range
+    execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth(submatch(0))." ".submatch(0)/'
+    execute a:firstline . "," . a:lastline . 'sort n'
+    execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
+endfunction
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Supertab 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " au FileType python set omnifunc=pythoncomplete#Complete " This breaks stuff
@@ -32,8 +44,8 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 " => Jedi-vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:jedi#auto_initialization = 1
-let g:jedi#popup_on_dot = 1
-let g:jedi#auto_close_doc = 1
+let g:jedi#popup_on_dot = 0
+let g:jedi#auto_close_doc = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Python-mode 
@@ -58,7 +70,7 @@ let g:pymode_doc_key = 'K'
 
 "Linting
 let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_checker = "pyflakes,pep8,pep257"
 " Auto check on save
 let g:pymode_lint_write = 1
 " Automatically fix PEP8 errors in the current buffer:

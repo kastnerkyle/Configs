@@ -2,7 +2,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 sudo apt-get install screen vim
-wget http://repo.continuum.io/archive/Anaconda-2.0.0-Linux-x86_64.sh
+wget http://repo.continuum.io/archive/Anaconda-2.0.1-Linux-x86_64.sh
 bash Anaconda*.sh -b
 echo "export PATH=$HOME/anaconda/bin:"'$PATH' >> $HOME/.bashrc
 wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1204/x86_64/cuda-repo-ubuntu1204_5.5-0_amd64.deb

@@ -4,7 +4,7 @@ sudo apt-get -y dist-upgrade
 sudo apt-get install screen vim
 wget http://repo.continuum.io/archive/Anaconda-2.0.1-Linux-x86_64.sh
 bash Anaconda*.sh -b
-echo "export PATH=$HOME/anaconda/bin:"'$PATH' >> $HOME/.bashrc
+echo 'export PATH=$HOME/anaconda/bin:''$PATH' >> $HOME/.bashrc
 wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1204/x86_64/cuda-repo-ubuntu1204_5.5-0_amd64.deb
 sudo dpkg -i cuda-repo-ubuntu1204_5.5-0_amd64.deb
 sudo apt-get update
@@ -19,9 +19,9 @@ cd ..
 cd Theano
 python setup.py develop
 cd $HOME
-echo "export PATH=/usr/local/cuda-5.5/bin:$PATH" >> .bashrc
-echo "export LD_LIBRARY_PATH=/usr/local/cuda-5.5/lib64:$LD_LIBRARY_PATH" >> .bashrc
-echo "export PYLEARN2_DATA_PATH=/home/ubuntu/data" >> .bashrc
+echo "export PATH=/usr/local/cuda/bin:$PATH" >> .bashrc
+echo "export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH" >> .bashrc
+echo "export PYLEARN2_DATA_PATH=$HOME/pylearn2_data" >> .bashrc
 source $HOME/.bashrc
 mkdir -p $HOME/pylearn2_data/mnist/
 cd $HOME/pylearn2_data/mnist/

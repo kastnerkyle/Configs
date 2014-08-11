@@ -8,7 +8,7 @@ echo "export PATH=$HOME/anaconda/bin:"'$PATH' >> $HOME/.bashrc
 wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1204/x86_64/cuda-repo-ubuntu1204_5.5-0_amd64.deb
 sudo dpkg -i cuda-repo-ubuntu1204_5.5-0_amd64.deb
 sudo apt-get update
-sudo apt-get install cuda
+sudo apt-get install -y cuda
 #THEANO_FLAGS=floatX=float32,device=gpu0 python /usr/local/lib/python2.7/dist-packages/theano/misc/check_blas.py
 cd $HOME/src
 git clone git://github.com/lisa-lab/pylearn2.git

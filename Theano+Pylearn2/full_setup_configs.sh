@@ -1,7 +1,7 @@
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-sudo apt-get install screen vim
+sudo apt-get install screen vim eog
 wget http://repo.continuum.io/archive/Anaconda-2.0.1-Linux-x86_64.sh
 bash Anaconda*.sh -b
 echo 'export PATH=$HOME/anaconda/bin:''$PATH' >> $HOME/.bashrc
@@ -22,6 +22,7 @@ cd $HOME
 echo "export PATH=/usr/local/cuda/bin:$PATH" >> .bashrc
 echo "export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH" >> .bashrc
 echo "export PYLEARN2_DATA_PATH=$HOME/pylearn2_data" >> .bashrc
+echo "export PYLEARN2_VIEWER_COMMAND='eog --new-instance'" >> .bashrc
 source $HOME/.bashrc
 mkdir -p $HOME/pylearn2_data/mnist/
 cd $HOME/pylearn2_data/mnist/
@@ -33,6 +34,9 @@ wget http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
 gunzip t10k-images-idx3-ubyte.gz
 wget http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
 gunzip t10k-labels-idx1-ubyte.gz
+cd ..
+mkdir -p $HOME/pylearn2_data/cifar10/
+wget http://www.cs.utoronto.ca/~kriz/cifar-10-python.tar.gz | tar xvzf -
 cd $HOME
 echo '[global]
 floatX = float32

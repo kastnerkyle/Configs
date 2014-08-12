@@ -5,6 +5,7 @@ sudo apt-get install screen vim eog
 wget http://repo.continuum.io/archive/Anaconda-2.0.1-Linux-x86_64.sh
 bash Anaconda*.sh -b
 echo 'export PATH=$HOME/anaconda/bin:''$PATH' >> $HOME/.bashrc
+source $HOME/.bashrc
 wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1204/x86_64/cuda-repo-ubuntu1204_5.5-0_amd64.deb
 sudo dpkg -i cuda-repo-ubuntu1204_5.5-0_amd64.deb
 sudo apt-get update
@@ -19,7 +20,7 @@ cd ..
 cd Theano
 python setup.py develop
 cd $HOME
-echo "export PATH=/usr/local/cuda/bin:$PATH" >> .bashrc
+echo 'export PATH=/usr/local/cuda/bin:$PATH' >> .bashrc
 echo "export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH" >> .bashrc
 echo "export PYLEARN2_DATA_PATH=$HOME/pylearn2_data" >> .bashrc
 echo "export PYLEARN2_VIEWER_COMMAND='eog --new-instance'" >> .bashrc

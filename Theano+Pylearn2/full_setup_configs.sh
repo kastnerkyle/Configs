@@ -6,23 +6,26 @@ echo "# These lines added by $(basename $0)" >> $HOME/.bashrc
 echo 'export PATH=$HOME/anaconda/bin:$PATH' >> $HOME/.bashrc
 source $HOME/.bashrc
 
-sudo apt-get install -y nvidia-current-dev nvidia-cuda-toolkit
-echo 'export CUDA_ROOT=/usr/lib/nvidia-cuda-toolkit' >> $HOME/.bashrc
-echo 'export PATH=$CUDA_ROOT/bin:$PATH' >> $HOME/.bashrc
-echo 'export LD_LIBRARY_PATH=$CUDA_ROOT/lib:$LD_LIBRARY_PATH' >> $HOME/.bashrc
-source $HOME/.bashrc
+#sudo apt-get install -y nvidia-current-dev nvidia-cuda-toolkit
+#echo 'export CUDA_ROOT=/usr/lib/nvidia-cuda-toolkit' >> $HOME/.bashrc
+#echo 'export PATH=$CUDA_ROOT/bin:$PATH' >> $HOME/.bashrc
+#echo 'export LD_LIBRARY_PATH=$CUDA_ROOT/lib:$LD_LIBRARY_PATH' >> $HOME/.bashrc
+#source $HOME/.bashrc
 
-#Ubuntu version checking
+#Ubuntu version checking TODO
 FULL_VERSION=`lsb_release -a | grep Desc | unexpand | tr -s ' ' | cut -d ':' -f 2 | cut -d ' ' -f 2`
 MAJOR_VERSION=`echo "$FULL_VERSION" | cut -d '.' -f 1`
 MINOR_VERSION=`echo "$FULL_VERSION" | cut -d '.' -f 2`
 
 # This doesn't work... WTF? OpenPGP keys issue despite apt-key add
-#wget -q -O - http://developer.download.nvidia.com/compute/cuda/repos/GPGKEY | sudo apt-key add -
-#wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1204/x86_64/cuda-repo-ubuntu1204_6.0-52_amd64.deb
-#sudo dpkg -i cuda-repo-ubuntu1204*
-#sudo apt-get update
-#sudo apt-get install -y cuda
+wget -q -O - http://developer.download.nvidia.com/compute/cuda/repos/GPGKEY | sudo apt-key add -
+wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1204/x86_64/cuda-repo-ubuntu1204_6.0-52_amd64.deb
+#wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_6.5-14_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu*
+sudo apt-get update
+sudo apt-get install -y cuda
+echo 'export PATH=/usr/local/cuda/bin:$PATH' >> $HOME/.bashrc
+echo "export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH" >> $HOME/.bashrc
 
 #THEANO_FLAGS=floatX=float32,device=gpu0 python /usr/local/lib/python2.7/dist-packages/theano/misc/check_blas.py
 

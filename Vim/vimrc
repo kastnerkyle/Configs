@@ -62,7 +62,7 @@ let g:jedi#auto_close_doc = 0
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 1
+let g:pymode_rope = 0
 
 " Documentation
 let g:pymode_doc = 1
@@ -394,6 +394,11 @@ map <leader>q :e ~/buffer<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Replace word under cursor
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:nnoremap <leader>s :%s/\<<C-r><C-w>\>/
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

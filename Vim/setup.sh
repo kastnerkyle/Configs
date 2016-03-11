@@ -9,7 +9,7 @@ ln -s $CURDIR/vimrc $HOME/.vimrc
 git clone --recursive https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 #Need this for proper autocomplete with jedi-vim
 echo '# This line set by Vim autosetup script' >> $HOME/.bashrc
-echo 'export PYTHONPATH="$HOME/anaconda3/lib/python3.4/site-packages":$PYTHONPATH' >> $HOME/.bashrc
+echo 'export PYTHONPATH="$HOME/anaconda3/lib/python3.5/site-packages":$PYTHONPATH' >> $HOME/.bashrc
 vim +BundleInstall +qall
 echo ''
 echo ''

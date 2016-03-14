@@ -20,4 +20,9 @@ main = do
         } `additionalKeys`
         [((mod1Mask, 0x30), spawn "scrot screen_%Y-%m-%d-%H-%M-%S.png -d 1")
         ,((mod1Mask .|. shiftMask, 0x30), spawn "scrot window_%Y-%m-%d-%H-%M-%S.png -d 1-u") 
+        ,((0, 0x1008FF11), spawn "amixer set Master 5-")
+        ,((0, 0x1008FF13), spawn "amixer set Master 5+")
+        ,((0, 0x1008FF12), spawn "amixer -q -D pulse set Master toggle")
+        ,((0, 0x1008FF02), spawn "xbacklight -inc 10")
+        ,((0, 0x1008FF03), spawn "xbacklight -dec 10")
         ]

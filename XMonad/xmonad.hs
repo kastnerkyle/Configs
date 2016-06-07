@@ -25,4 +25,5 @@ main = do
         ,((0, 0x1008FF12), spawn "amixer set Master 0%")
         ,((0, 0x1008FF02), spawn "xbacklight -inc 10")
         ,((0, 0x1008FF03), spawn "xbacklight -dec 10")
+        ,((mod1Mask .|. shiftMask, 0x6c), spawn "gnome-screensaver-command -l")
         ]

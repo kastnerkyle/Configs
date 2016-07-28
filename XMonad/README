@@ -2,3 +2,22 @@ Make a directory called ~/.xmonad
 Place the file named .xmonad.hs in ~/.xmonad
 Copy the file xmobarrc to ~/.xmobarrc
 Depending on the computer being used, the entries for Wireless or Network may be removed
+
+CHROMEBOOK SPECIFIC:
+
+Put chromebook in developer mode, download crouton installer
+http://goo.gl/fd3zc
+
+Pull up terminal in chrome:
+CTRL-ALT T
+
+Enter a linux shell
+crosh> shell
+
+sh ~/Downloads/crouton -r trusty -t audio -t xiwi -t x11 -t lxde-desktop -t lxde -t audio -t unity-desktop -t extension
+
+CTRL-ALT T
+crosh> shell
+$ sudo enter-chroot
+
+Now install the config using install.sh as normal

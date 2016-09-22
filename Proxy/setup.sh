@@ -19,4 +19,6 @@ read password
 echo "export DEFAULT_SSH_PROXY_HOST=$username@$proxyhost" >> ~/.bashrc
 echo "export SSH_EXPECT_PW=$password" >> ~/.bashrc
 echo "source ~/ssh_forward_functions.sh" >> ~/.bashrc
+echo '# forwarding' >> ~/.bashrc
+echo '# ssh -p 8000 -L 9999:localhost:9999 username@hostname -nNT' >> ~/.bashrc
 echo 'function ssh_to_lab { expect ssh_expect.ex '"$username"'@$1; }' >> ~/.bashrc

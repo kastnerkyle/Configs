@@ -1,4 +1,4 @@
-export DEFAULT_SSH_PROXY_HOST=username@proxyhost
+#export DEFAULT_SSH_PROXY_HOST=username@proxyhost
 
 function http_server_init_remote {  
      serve_string="$DEFAULT_SSH_PROXY_HOST"' ssh '"$1"' python -m SimpleHTTPServer '"$2"

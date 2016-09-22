@@ -1,5 +1,8 @@
 #export DEFAULT_SSH_PROXY_HOST=username@proxyhost
 
+# Another convenient command to forward local requests on 9999 to remote host 9999
+# ssh -p 8000 -L 9999:localhost:9999 username@host -nNT
+
 function http_server_init_remote {  
      serve_string="$DEFAULT_SSH_PROXY_HOST"' ssh '"$1"' python -m SimpleHTTPServer '"$2"
      $HOME/ssh_expect.ex $serve_string

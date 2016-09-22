@@ -100,6 +100,12 @@ let g:pymode_folding = 0
 " Map jj to <Esc>
 imap jj <Esc>
 
+" Map ctrl-j and ctrl-k
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <C-L> <C-W>l<C-W>_
+map <C-H> <C-W>h<C-W>_
+
 " Sets how many lines of history VIM has to remember
 set history=700
 

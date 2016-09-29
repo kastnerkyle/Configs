@@ -1,5 +1,9 @@
 "http://unlogic.co.uk/posts/vim-python-ide.html
 
+" Make 1000% sure the vim/vim7x path is valid
+" Otherwise syntax will break
+set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim74,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
+
 set nocompatible
 filetype off
 

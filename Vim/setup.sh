@@ -7,6 +7,13 @@ ln -s $CURDIR/autoload $HOME/.vim/autoload
 ln -s $CURDIR/bundle $HOME/.vim/bundle 
 ln -s $CURDIR/vimrc $HOME/.vimrc
 ln -s $CURDIR/colors $HOME/.vim/colors
+ln -s $CURDIR/syntax $HOME/.vim/syntax
+# For MILA machines, had to install VIM + Python with conda, then 
+# add runtimepath in vimrc and also $VIMRUNTIME point to default
+# what a mess
+# function vim {
+#    VIMRUNTIME=/usr/share/vim/vim74/ ~/anaconda/bin/vim $@
+#}
 git clone --recursive https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 #Need this for proper autocomplete with jedi-vim
 echo '# This line set by Vim autosetup script' >> $HOME/.bashrc

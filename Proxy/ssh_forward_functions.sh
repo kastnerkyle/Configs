@@ -47,7 +47,7 @@ function sshft {
         shift;
     done;
     echo ssh $FIRST_SSH_ARGS -t ssh $SECOND_SSH_ARGS;
-    $HOME/ssh_expect.ex $FIRST_SSH_ARGS -t ssh $SECOND_SSH_ARGS
+    $HOME/ssh_expect.ex $FIRST_SSH_ARGS -t ssh $SECOND_SSH_ARGS "'while true; do echo "'$RANDOM'"; sleep 2; done'"
 }
 
 function killjobs {

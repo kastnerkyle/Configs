@@ -22,3 +22,4 @@ echo "source ~/ssh_forward_functions.sh" >> ~/.bashrc
 echo '# forwarding' >> ~/.bashrc
 echo '# ssh -p 8000 -L 9999:localhost:9999 username@hostname -nNT' >> ~/.bashrc
 echo 'function ssh_to_lab { expect ssh_expect.ex '"$username"'@$1; }' >> ~/.bashrc
+echo 'function qssh { expect ssh_expect.ex '"$username"'@'"$proxyhost"'; }' >> ~/.bashrc

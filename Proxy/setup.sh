@@ -1,6 +1,8 @@
 sudo apt-get install expect
 chmod +x ssh_expect.ex
+chmod +x ssh_forward_expect.ex
 ln -s `pwd`/ssh_expect.ex ~/ssh_expect.ex
+ln -s `pwd`/ssh_forward_expect.ex ~/ssh_forward_expect.ex
 ln -s `pwd`/ssh_forward_functions.sh ~/ssh_forward_functions.sh
 
 username="defaultusername"

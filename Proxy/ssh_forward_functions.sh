@@ -64,3 +64,15 @@ function serve_from {
     sshft $@
     killjobs
 }
+
+function http_server_midi_init_remote {  
+     serve_string="python server.py -d /u/kastner/src/dagbldr/examples/rnn_midi_lm/samples -p $1"
+     $HOME/ssh_forward_expect.ex $serve_string
+}  
+
+# Usage: serve_midi port
+function serve_midi {
+    # This server will not die on the remote!
+    http_server_midi_init_remote $1
+    killjobs
+}

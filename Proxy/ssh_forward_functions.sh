@@ -67,12 +67,18 @@ function serve_from {
 
 function http_server_midi_init_remote {  
      serve_string="python server.py -d /u/kastner/src/dagbldr/examples/rnn_midi_lm/samples -p $1"
-     $HOME/ssh_forward_expect.ex $serve_string
+     $HOME/ssh_forward_expect.ex $1 $serve_string
+}  
+
+function http_server_midi_kill_remote {  
+     serve_string="$DEFAULT_SSH_PROXY_HOST"' pkill --full server.py'
+     $HOME/ssh_expect.ex $serve_string
 }  
 
 # Usage: serve_midi port
 function serve_midi {
     # This server will not die on the remote!
+    http_server_midi_kill_remote
     http_server_midi_init_remote $1
     killjobs
 }

@@ -6,6 +6,9 @@ set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vi
 
 set nocompatible
 filetype off
+set nobackup
+set noswapfile
+set nowritebackup
 
 filetype plugin indent on
 

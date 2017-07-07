@@ -6,8 +6,11 @@ bind h focus left
 layout new                                                                     
 split -v                                                                       
 screen 0                                                                       
-focus right                                                                   
+focus right 
 split                                                                         
 screen 1                                                                       
 focus down
 screen 2
+focus left
+resize +20%
+resize -5%

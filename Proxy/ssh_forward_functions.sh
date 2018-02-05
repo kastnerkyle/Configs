@@ -3,11 +3,6 @@
 # Another convenient command to forward local requests on 9999 to remote host 9999
 # ssh -p 8000 -L 9999:localhost:9999 username@host -nNT
 
-function http_server_init_remote {  
-     serve_string="$DEFAULT_SSH_PROXY_HOST"' ssh '"$1"' python -m SimpleHTTPServer '"$2"
-     $HOME/ssh_expect.ex $serve_string
-}  
-
 function sshft {
     # Thanks to dwf for this
     if [ $# -lt 2 ]; then
@@ -57,13 +52,36 @@ function killjobs {
     fi
 }
 
+function http_server_init_remote {  
+     serve_string="$DEFAULT_SSH_PROXY_HOST"' ssh '"$1"' python -m SimpleHTTPServer '"$2"
+     $HOME/ssh_expect.ex $serve_string
+}  
+
 # Usage: serve_from hostname port
 function serve_from {
     # This server will not die on the remote!
     http_server_init_remote $@ &
     sshft $@
-    killjobs
 }
+
+function http_tensorboard_init_remote {  
+     serve_string="$DEFAULT_SSH_PROXY_HOST"' ssh '"$1"' tensorboard --host 0.0.0.0 --port '"$2"' --logdir '"$3"
+     $HOME/ssh_expect.ex $serve_string
+}  
+
+function killalltensorboard {
+     serve_string="$DEFAULT_SSH_PROXY_HOST"' ssh '"$1"' killall --user kastner tensorboard'
+     $HOME/ssh_expect.ex $serve_string
+}
+
+# Usage: serve_tf hostname port logdir
+function serve_tf {
+    # This server will not die on the remote!
+    killalltensorboard $1
+    http_tensorboard_init_remote $@ &
+    sshft $1 $2
+}
+
 
 function http_server_midi_init_remote {  
      serve_string="python server.py -d /u/kastner/src/dagbldr/examples/rnn_midi_lm/samples -p $1"

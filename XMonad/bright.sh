@@ -21,8 +21,14 @@ bl_down() {
     fi
 }
 
+
+bl_lolo() {
+    sudo sh -c "echo 0 > /sys/class/backlight/intel_backlight/brightness"
+}
+
 bl_lo() {
-    sudo sh -c "echo 50 > /sys/class/backlight/intel_backlight/brightness"
+    let new=$(($max / 5)) 
+    sudo sh -c "echo $new > /sys/class/backlight/intel_backlight/brightness"
 }
 
 bl_med() {
@@ -45,6 +51,9 @@ case "$1" in
     'l')
         bl_lo
         ;;
+    'll')
+        bl_lolo
+        ;;
     'm')
         bl_med
         ;;
@@ -55,5 +64,5 @@ case "$1" in
         echo "actual $yet to $max"
         ;;
     *)
-        echo "bright.sh u (up) | d (down) | l (lo) | h (hi) | z (actual)"
+        echo "bright.sh u (up) | d (down) | l (lo) | h (hi) | m (med) | z (actual)"
 esac

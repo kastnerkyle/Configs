@@ -64,6 +64,25 @@ function serve_from {
     sshft $@
 }
 
+#function sshfs_init_remote {  
+#     serve_string="$DEFAULT_SSH_PROXY_HOST"' sshfs -p '"$2"' kastner@leto01:/Tmp/kastner /tmp/kastner_sshfs_tmp'
+#     $HOME/ssh_expect.ex $serve_string
+#}  
+
+
+#function sshfs_from {
+    #$HOME/ssh_expect.ex -t kastner@elisa3.iro.umontreal.ca 'mkdir -p /tmp/kastner_sshfs_tmp && nohup sshfs leto01:/Tmp/kastner /tmp/kastner_sshfs_tmp & sleep 10 && echo DONE'
+#    mkdir -p kastner_sshfs_tmp
+#    $HOME/sshfs_expect.ex kastner@elisa2.iro.umontreal.ca: kastner_sshfs_tmp
+#}
+
+# Usage: serve_from hostname port
+#function sshfs_from {
+#    ssh -t kastner@elisa3.iro.umontreal.ca 'mkdir -p /tmp/kastner_sshfs_tmp && nohup sshfs leto01:/Tmp/kastner /tmp/kastner_sshfs_tmp & sleep 10 && echo DONE'
+#    mkdir kastner_sshfs_tmp
+#    sshfs kastner@elisa3.iro.umontreal.ca:/tmp/kastner_sshfs_tmp kastner_sshfs_tmp
+#}
+
 function http_tensorboard_init_remote {  
      serve_string="$DEFAULT_SSH_PROXY_HOST"' ssh '"$1"' tensorboard --host 0.0.0.0 --port '"$2"' --logdir '"$3"
      $HOME/ssh_expect.ex $serve_string

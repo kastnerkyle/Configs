@@ -7,7 +7,7 @@ set timeout 45
 set passwd $::env(SSH_EXPECT_PW)
 set postflags [lrange $argv 0 end]
 
-spawn ssh -p 8002 {*}$postflags
-expect "Password:"
+spawn ssh {*}$postflags
+expect "assword:"
 send "$passwd\r";
 interact

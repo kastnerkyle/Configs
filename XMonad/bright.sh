@@ -23,7 +23,8 @@ bl_down() {
 
 
 bl_lolo() {
-    sudo sh -c "echo 0 > /sys/class/backlight/intel_backlight/brightness"
+    let new=$(($max / 8)) 
+    sudo sh -c "echo $new > /sys/class/backlight/intel_backlight/brightness"
 }
 
 bl_lo() {

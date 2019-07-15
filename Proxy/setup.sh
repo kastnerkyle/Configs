@@ -17,6 +17,11 @@ read proxyhost
 
 echo "Password for username@proxyhost ... WARNING: will be stored in plain text!"
 read password
+echo '#commands for limiting chrome memory usage'
+echo '#sudo apt-get install cgroup-tools' >> ~/.bashrc
+echo '#sudo cgcreate -a $USER:$USER -t $USER:$USER -g memory:groupChromeMemLimit' >> ~/.bashrc
+echo '#sudo cgset -r memory.limit_in_bytes=$(($1024*1024*1024*2)) groupChromeMemLimit' >> ~/.bashrc
+echo '#cgexec -g memory:groupChromeMemLimit google-chrome' >> ~/.bashrc
 
 echo "export DEFAULT_SSH_PROXY_HOST=$username@$proxyhost" >> ~/.bashrc
 echo "export SSH_EXPECT_PW=$password" >> ~/.bashrc

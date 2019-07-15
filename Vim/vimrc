@@ -1,10 +1,10 @@
 " enable syntax highlighting
 syntax enable
 
+set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
 
 " expand tabs into spaces
 "set expandtab

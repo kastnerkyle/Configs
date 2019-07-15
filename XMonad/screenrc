@@ -2,11 +2,3 @@ bind j focus down
 bind k focus up                                                                
 bind l focus right                                                             
 bind h focus left                                                              
-                                                                                  
-layout new                                                                     
-split -v                                                                       
-screen 0                                                                       
-focus right                                                                    
-split                                                                          
-screen 1                                                                       
-focus down

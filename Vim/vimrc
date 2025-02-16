@@ -2,9 +2,9 @@
 syntax enable
 
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " expand tabs into spaces
 "set expandtab
@@ -47,9 +47,10 @@ map <C-H> <C-W>h<C-W>_
 " Enable syntax highlighting
 syntax enable 
 
-" Desert colorscheme
+" Default colorscheme
+" This order matters - dark then default is ugly
+colorscheme default
 set background=dark
-colorscheme desert
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
